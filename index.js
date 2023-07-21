@@ -95,11 +95,12 @@ function displayDataForCurrentPage() {
   const tomatoesPreview = document.querySelectorAll(".tomatoes");
   const combinedPreview = document.querySelectorAll(".combined");
 
-  if (!isNaN(imdbRatingInput)) imdbPreview[0].textContent = imdbRatingInput;
+  if (!isNaN(imdbRatingInput))
+    imdbPreview[0].textContent = `IMDB Rating : ${imdbRatingInput} \+`;
   if (!isNaN(tomatoesRatingInput))
-    tomatoesPreview[0].textContent = tomatoesRatingInput;
+    tomatoesPreview[0].textContent = `Tomatoes Rating : ${tomatoesRatingInput} \+`;
   if (!isNaN(combinedRatingInput))
-    combinedPreview[0].textContent = combinedRatingInput;
+    combinedPreview[0].textContent = `Combined Rating : ${combinedRatingInput} \+`;
 
   const startIdx = (currentPage - 1) * itemsPerPage;
   const endIdx = startIdx + itemsPerPage;
@@ -166,7 +167,7 @@ function initializePagination() {
 
   for (let i = 1; i <= totalPages; i++) {
     const pageButton = document.createElement("div");
-    pageButton.classList.add("btn", "mx-2", "btn-outline-secondary");
+    pageButton.classList.add("btn", "btn-outline-secondary");
     pageButton.classList.add(`btn-${i}`);
     pageButton.textContent = i;
     pageButton.addEventListener("click", () => handlePaginationClick(i));

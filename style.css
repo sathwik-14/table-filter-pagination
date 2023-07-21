@@ -4,9 +4,13 @@
 
 /* style.css */
 #paginationContainer {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
+  width: 40vw;
+  overflow-x: auto;
+}
+
+table {
+  width: 80vh;
+  overflow-x: auto;
 }
 
 #paginationContainer button {
