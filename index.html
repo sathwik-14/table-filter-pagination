@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css"
+      integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Movies table</title>
+  </head>
+  <body>
+    <div class="container-fluid p-5">
+      <div class="mb-3">
+        <label for="imdbRatingInput" class="form-label">IMDb Rating:</label>
+        <input
+          type="number"
+          id="imdbRatingInput"
+          step="0.1"
+          min="0"
+          max="10"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="tomatoesRatingInput" class="form-label"
+          >Rotten Tomatoes Rating:</label
+        >
+        <input
+          type="number"
+          id="tomatoesRatingInput"
+          step="0.1"
+          min="0"
+          max="10"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="combinedRatingInput" class="form-label"
+          >Combined Rating:</label
+        >
+        <input
+          type="number"
+          id="combinedRatingInput"
+          step="0.1"
+          min="0"
+          max="10"
+          class="form-control"
+        />
+      </div>
+
+      <div class="fs-7">
+        Showing Results For : IMDB-<span class="imdb">0</span> and above ;
+        Tomatoes-<span class="tomatoes">0</span> and above ; Combined-<span
+          class="combined"
+          >0</span
+        >
+        and above ;
+      </div>
+      <table class="table table-striped table-fixed">
+        <thead class="table-dark">
+          <tr>
+            <th class="sortable" data-column="title">Title</th>
+            <th class="sortable" data-column="imdb.rating">IMDB rating</th>
+            <th class="sortable" data-column="tomatoes.viewer.rating">
+              Rotten Tomatoes rating
+            </th>
+            <th class="sortable" data-column="combinedRating">
+              Combined rating
+            </th>
+            <th class="sortable" data-column="plot">view</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+
+    <div id="paginationContainer" class="mx-5"></div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
